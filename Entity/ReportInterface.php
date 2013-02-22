@@ -80,4 +80,25 @@ interface ReportInterface
      * @return array|SimpleXMLElement
      */
     public function listTestCases();
+
+    /**
+     * List all success tests cases
+     *
+     * @return array|SimpleXMLElement
+     */
+    public function listSuccessTestCases();
+
+    /**
+     * List all Failures tests cases
+     *
+     * @return array|SimpleXMLElement
+     */
+    public function listFailuresTestCases();
+
+    /**
+     * List all Pending tests cases
+     *
+     * @return array|SimpleXMLElement
+     */
+    public function listPendingTestCases();
 }

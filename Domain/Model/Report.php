@@ -32,8 +32,12 @@ class Report implements ReportInterface
 
     public function __construct($content)
     {
+        $content = trim($content);
         switch ($content) {
             case null:
+                $this->state = new NotFound;
+                break;
+            case '<?xml version="1.0" encoding="UTF-8"?>':
                 $this->state = new NotFound;
                 break;
             default:
@@ -129,6 +133,36 @@ class Report implements ReportInterface
     public function listTestCases()
     {
         return $this->state->listTestCases();
+    }
+
+    /**
+     * List all success tests cases
+     *
+     * @return array|SimpleXMLElement
+     */
+    public function listSuccessTestCases()
+    {
+       return $this->state->listSuccessTestCases();
+    }
+
+    /**
+     * List all Failures tests cases
+     *
+     * @return array|SimpleXMLElement
+     */
+    public function listFailuresTestCases()
+    {
+        return $this->state->listFailuresTestCases();
+    }
+
+    /**
+     * List all Pending tests cases
+     *
+     * @return array|SimpleXMLElement
+     */
+    public function listPendingTestCases()
+    {
+        return $this->state->listPendingTestCases();
     }
 
 }

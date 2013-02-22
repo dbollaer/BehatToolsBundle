@@ -184,4 +184,34 @@ class Found implements StateInterface
         return $result;
     }
 
+    /**
+     * List all success tests cases
+     *
+     * @return array|SimpleXMLElement
+     */
+    public function listSuccessTestCases()
+    {
+        return $this->listTestCasesByType('success');
+    }
+
+    /**
+     * List all Failures tests cases
+     *
+     * @return array|SimpleXMLElement
+     */
+    public function listFailuresTestCases()
+    {
+        return $this->listTestCasesByType('failed');
+    }
+
+    /**
+     * List all Pending tests cases
+     *
+     * @return array|SimpleXMLElement
+     */
+    public function listPendingTestCases()
+    {
+        return $this->listTestCasesByType('undefined');
+    }
+
 }

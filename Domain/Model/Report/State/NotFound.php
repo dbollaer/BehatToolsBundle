@@ -107,4 +107,34 @@ class NotFound implements StateInterface
         return array();
     }
 
+
+    /**
+     * List all success tests cases
+     *
+     * @return array|SimpleXMLElement
+     */
+    public function listSuccessTestCases()
+    {
+        return array();
+    }
+
+    /**
+     * List all Failures tests cases
+     *
+     * @return array|SimpleXMLElement
+     */
+    public function listFailuresTestCases()
+    {
+        return array();
+    }
+
+    /**
+     * List all Pending tests cases
+     *
+     * @return array|SimpleXMLElement
+     */
+    public function listPendingTestCases()
+    {
+        return array();
+    }
 }
